@@ -1,7 +1,7 @@
 " File: contextcomplete.vim
 " Description: Decide which completion type to use based on context
 " Maintainer: Evergreen
-" Version: 1.1.1
+" Version: 1.2.1
 " Last Change: May 30th, 2015
 " License: Vim License
 
