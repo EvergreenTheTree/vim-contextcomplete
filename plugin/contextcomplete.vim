@@ -23,15 +23,13 @@ let g:contextcomplete_trigger = get(g:, 'contextcomplete_trigger', '\<Tab>')
 " macros, cmdline, user, omnicomplete, spelling, complete-keywords, ignore
 let g:contextcomplete_detect_regexes = get(g:,
 \ 'contextcomplete_detect_regexes', {
-    \ 'keywords': '\v<\w+>$', 'file-names': '\v\/$', 'omnicomplete': '\v\.$',
-    \ 'ignore': '\v^\s*$'
+    \ 'keywords': '\v\w{-1,}$', 'file-names': '\v\/(\w|\-){-}$',
+    \ 'omnicomplete': '\v\.\w{-}$', 'ignore': '\v^\s*$'
 \ })
 
 " Order of precedence for each type of completion.  (first one to match is used)
 let g:contextcomplete_key_order = get(g:, 'contextcomplete_key_order', [
-    \ 'lines', 'keywords', 'dictionary', 'thesaurus', 'keywords-included',
-    \ 'tags', 'file-names', 'macros', 'cmdline', 'user', 'omnicomplete',
-    \ 'spelling', 'complete-keywords'
+    \ 'file-names', 'omnicomplete', 'keywords',
 \ ])
 
 " The readable name of the completion, and the associated key press to initiate
