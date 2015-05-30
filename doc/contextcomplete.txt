@@ -31,16 +31,16 @@ keys in |g:contextcomplete_detect_regexes| is available below.
 
   Dictionary Key        Related Keystroke   Default Value ~
   lines                 i_CTRL-X_CTRL-L     None
-  keywords              i_CTRL-X_CTRL-N     '\v<\w+>$'
+  keywords              i_CTRL-X_CTRL-N     '\v\w{-1,}$'
   dictionary            i_CTRL-X_CTRL-K     None
   thesaurus             i_CTRL-X_CTRL-T     None
   keywords-included     i_CTRL-X_CTRL-I     None
   tags                  i_CTRL-X_CTRL-]     None
-  file-names            i_CTRL-X_CTRL-F     None
+  file-names            i_CTRL-X_CTRL-F     '\v\/(\w|\-){-}$'
   macros                i_CTRL-X_CTRL-D     None
   cmdline               i_CTRL-X_CTRL-V     None
   user                  i_CTRL-X_CTRL-U     None
-  omnicomplete          i_CTRL-X_CTRL-O     '\v\.$'
+  omnicomplete          i_CTRL-X_CTRL-O     '\v\.\w{-}$'
   spelling              i_CTRL-X_s          None
   complete-keywords     i_CTRL-N            None
   ignore                None                '\v^\s*$'

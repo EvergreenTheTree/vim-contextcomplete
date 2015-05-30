@@ -2,7 +2,7 @@
 " Description: Decide which completion type to use based on context
 " Maintainer: Evergreen
 " Version: 1.1.1
-" Last Change: May 28th, 2015
+" Last Change: May 30th, 2015
 " License: Vim License
 
 " BOILERPLATE {{{
