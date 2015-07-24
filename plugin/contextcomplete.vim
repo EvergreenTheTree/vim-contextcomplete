@@ -49,19 +49,33 @@ let s:contextcomplete_type_with_keypress = {
 " This function returns the keypress for the detected completion mode, and if it
 " is not found or matches ignore, returns a the trigger's normal keypress
 function! s:ContextComplete()
+    if exists("b:contextcomplete_detect_regexes")
+        let detect_regexes = b:contextcomplete_detect_regexes
+    else
+        let detect_regexes = g:contextcomplete_detect_regexes
+    endif
+
+    if exists("b:contextcomplete_key_order")
+        let key_order = b:contextcomplete_key_order
+    else
+        let key_order = g:contextcomplete_key_order
+    endif
+
     let current_line = getline(".")
     " This gets all the text that is behind the cursor using string slices.
     let line_before_col = current_line[0:col(".")-2]
 
-    if line_before_col =~# get(g:contextcomplete_detect_regexes, 'ignore', '')
+
+    let ignore = get(detect_regexes, 'ignore', '')
+    if line_before_col =~# ignore && ignore !=# ''
         return eval('"' . g:contextcomplete_trigger . '"')
     endif
 
     let completion_type = -1
 
-    for type in g:contextcomplete_key_order
-        if has_key(g:contextcomplete_detect_regexes, type) != 0
-            let detect_regex = g:contextcomplete_detect_regexes[type]
+    for type in key_order
+        if has_key(detect_regexes, type) != 0
+            let detect_regex = detect_regexes[type]
         else
             continue
         endif

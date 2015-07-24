@@ -60,6 +60,14 @@ Example of a configuration for detection regexes: >
   \ }
 <
 
+*b:contextcomplete_detect_regexes*
+
+This option works exactly the same way that |g:contextcomplete_detect_regexes|
+does, except it is buffer local and if set, it overrides the values in the
+global version of this option.  This can be used for setting filetype specific
+detection regexes.
+
+
 *g:contextcomplete_key_order*
 
 You can specify which completion types have precedence over each other using
@@ -75,6 +83,13 @@ Example: >
     \ 'spelling', 'complete-keywords'
   \ ]
 <
+
+*b:contextcomplete_key_order*
+
+This option works exactly the same way as |g:contextcomplete_key_order| does,
+except it is buffer local and if set, overrides the values in the global
+version of this option.  This allows for filetype specific settings.
+
 
 *g:contextcomplete_trigger*
 
